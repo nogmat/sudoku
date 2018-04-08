@@ -1,0 +1,29 @@
+#ifndef DEF_ENTITY
+#define DEF_ENTITY
+
+#include "list.hpp"
+
+
+class Entity{
+  
+public :
+
+  Entity();
+
+  void initEntity();
+  
+  bool addValue(int v);
+
+  List* getList();
+
+  void remValue(int v);
+
+private :
+
+  bool values[9];
+
+};
+  
+  
+
+#endif

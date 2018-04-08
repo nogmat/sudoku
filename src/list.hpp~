@@ -1,0 +1,34 @@
+#ifndef DEF_LIST
+#define DEF_LIST
+
+#include <vector>
+
+typedef std::vector<int> SubList;
+
+class List{
+  
+public :
+  
+  List();
+  
+  ~List();
+
+  void merge(List* l);
+
+  void push(int v);
+  
+  int at(int i);
+
+  int size();
+
+  bool empty();
+
+private :
+
+  SubList* values;
+  bool blank;
+
+};
+
+
+#endif
