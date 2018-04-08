@@ -19,12 +19,13 @@ void Entity::initEntity(){
 }  
 
 bool Entity::addValue(int v){
-  if(values[v-1]){
-    values[v-1] = false;
-    return true;
-  } else {
-    return false;
+  if(v>=1 && v<=9){
+    if(values[v-1]){
+      values[v-1] = false;
+      return true;
+    }
   }
+  return false;
 }
 
 List* Entity::getList(){

@@ -24,26 +24,29 @@ using namespace std;
 void display(Board cells);
 
 /*!
- * \fn void loadFile(Board &cells)
- * \bried Loads a board from a formatted text file
+ * \fn void loadFile(Board &cells, char* dir)
+ * \bried Load a board from a formatted text file
  * \param cells Board to load
+ * \param dir Dired
  */
-void loadFile(Board &cells);
+void loadFile(Board &cells, char* dir);
 
 /*!
  * \fn int main()
  * \brief Program's entry
  */
-int main(){
-  Board cells4;
-  loadFile(cells4);
-  display(cells4);
-  Grid g = Grid();
-  g.load(cells4);
-  g.solve();
-  g.save(cells4);
-  display(cells4);
-
+int main(int argc, char** argv){
+  if(argc == 2){
+    Board cells4;
+    loadFile(cells4, argv[1]);
+    display(cells4);
+    Grid g = Grid();
+    if(g.load(cells4)){
+      g.solve();
+      g.save(cells4);
+      display(cells4);
+    }
+  }
   return 0;
 }
 
@@ -57,12 +60,10 @@ void display(Board cells){
   cout << endl;
 }
 
-void loadFile(Board &cells){
-  string chain;
-  cout << "Fichier contenant la grille : ";
-  cin >> chain;
-  ifstream file(chain.c_str());
+void loadFile(Board &cells, char* dir){
+  ifstream file(dir);
   int i(0);
+  string chain("");
   while(getline(file, chain) && i < 9){
     for(int j = 0 ; j < 9 ; j++){
       cells[i][j] = (chain[j]-48);
