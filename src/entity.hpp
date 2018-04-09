@@ -36,7 +36,7 @@ public :
    * \param v Value to set as used
    * \return Test if the value has not been set before
    */
-  bool addValue(int v);
+  bool addValue(Numerous v);
 
   /*!
    * \brief Get the free values
@@ -48,7 +48,7 @@ public :
    * \brief Set a value as unused
    * \param v Value to set as unused
    */
-  void remValue(int v);
+  void remValue(Numerous v);
 
 private :
 

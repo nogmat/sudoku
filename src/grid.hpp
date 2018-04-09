@@ -11,7 +11,7 @@
  * \date April 2018
  */
 
-typedef int Board[9][9];
+typedef Numerous Board[9][9];
 
 /*!
  * \class Grid
@@ -62,13 +62,13 @@ public :
    * \brief Move a step forward during the process
    * \param v Value to put inside the current cell
    */
-  void nextStep(int v);
+  void nextStep(Numerous v);
 
   /*!
    * \brief Move a step before during the process
    * \param v Value to remove from the current cell
    */
-  void prevStep(int v);
+  void prevStep(Numerous v);
 
   /*!
    * \brief Recursive helper for the solve method
@@ -84,23 +84,23 @@ public :
    * \brief Get the square of the current cell
    * \return Number of the current square
    */
-  int theSquare();
+  Numerous theSquare();
 
   /*!
    * \brief Get the column of the current cell
    * \return Number of the current column
    */
-  int theColumn();
+  Numerous theColumn();
 
   /*!
    * \brief Get the row of the current cell
    * \return Number of the current row
    */
-  int theRow();
+  Numerous theRow();
 
 private :
 
-  int position; /*!< Position on the grid (from top to bottom and left to right)*/
+  Numerous position; /*!< Position on the grid (from top to bottom and left to right)*/
   enum State {
     PROCESSING,
     SOLVED,

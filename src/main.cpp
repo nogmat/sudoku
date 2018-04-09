@@ -51,9 +51,9 @@ int main(int argc, char** argv){
 }
 
 void display(Board cells){
-  for(int i = 0 ; i < 9 ; i++){
+  for(Numerous i = 0 ; i < 9 ; i++){
     cout << "\n";
-    for(int j = 0 ; j < 9 ; j++){
+    for(Numerous j = 0 ; j < 9 ; j++){
       cout << cells[i][j];
     }
   }
@@ -62,10 +62,10 @@ void display(Board cells){
 
 void loadFile(Board &cells, char* dir){
   ifstream file(dir);
-  int i(0);
+  Numerous i(0);
   string chain("");
   while(getline(file, chain) && i < 9){
-    for(int j = 0 ; j < 9 ; j++){
+    for(Numerous j = 0 ; j < 9 ; j++){
       cells[i][j] = (chain[j]-48);
     }
     i++;

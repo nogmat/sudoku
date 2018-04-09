@@ -15,20 +15,20 @@ Grid::Grid(){
 void Grid::initGrid(){
   position = 0;
   state = PROCESSING;
-  for(int j = 0 ; j < 9 ; j++){
+  for(Numerous j = 0 ; j < 9 ; j++){
     row[j].initEntity();
     column[j].initEntity();
     square[j].initEntity();
   }
-  for(int i = 0 ; i < 81 ; i++){
+  for(Numerous i = 0 ; i < 81 ; i++){
     cells[i%9][i/9]=0;
   }
 }
 
 bool Grid::load(Board extCells){
   initGrid();
-  int value;
-  for(int i = 0 ; i < 81 && (state == PROCESSING) ; i++){
+  Numerous value;
+  for(Numerous i = 0 ; i < 81 && (state == PROCESSING) ; i++){
     value = extCells[i%9][i/9];
     if(value >= 1 && value <= 9){
       nextStep(value);
@@ -41,7 +41,7 @@ bool Grid::load(Board extCells){
 }
 
 void Grid::save(Board& extCells){
-  for(int i = 0 ; i < 81 ; i++){
+  for(Numerous i = 0 ; i < 81 ; i++){
     extCells[i%9][i/9] = cells[i%9][i/9];
   }
 }
@@ -56,7 +56,7 @@ void Grid::prevCell(){
   position--;
 }
 
-void Grid::nextStep(int value){
+void Grid::nextStep(Numerous value){
   bool passed = true;
   passed &= row[theRow()].addValue(value);
   passed &= column[theColumn()].addValue(value);
@@ -68,7 +68,7 @@ void Grid::nextStep(int value){
     state = UNSOLVABLE;
   }
 }
-void Grid::prevStep(int value){
+void Grid::prevStep(Numerous value){
   prevCell();
   cells[theRow()][theColumn()] = 0;
   square[theSquare()].remValue(value);
@@ -86,7 +86,7 @@ void Grid::processing(){
       l.merge(column[theColumn()].getList());
       l.merge(square[theSquare()].getList());
       if(!l.empty()){
-	for(int i = 0 ; i < l.size() && (state == PROCESSING) ; i++){
+	for(Numerous i = 0 ; i < l.size() && (state == PROCESSING) ; i++){
 	  nextStep(l.at(i));
 	  processing();
 	  if(state == PROCESSING) {
@@ -111,12 +111,12 @@ void Grid::solve(){
   }
 }
 
-int Grid::theSquare(){
+Numerous Grid::theSquare(){
   return ((position%9)/3+((position/9)/3)*3);
 }
-int Grid::theColumn(){
+Numerous Grid::theColumn(){
   return position/9;
 }
-int Grid::theRow(){
+Numerous Grid::theRow(){
   return position%9;
 }

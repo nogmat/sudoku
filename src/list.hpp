@@ -10,7 +10,8 @@
  */
 #include <vector>
 
-typedef std::vector<int> SubList;
+typedef short int Numerous;
+typedef std::vector<short int> SubList;
 
 /*!
  * \class List
@@ -40,19 +41,19 @@ public :
    * \brief Push a value in the list
    * \param v Value to push
    */
-  void push(int v);
+  void push(Numerous v);
 
   /*!
    * \brief Get value in list
    * \param i Index of value to get
    */
-  int at(int i);
+  Numerous at(Numerous i);
 
   /*!
    * \brief Get size of list
    * \return Size of list
    */
-  int size();
+  Numerous size();
 
   /*!
    * \brief Test if list is empty

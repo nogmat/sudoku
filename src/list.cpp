@@ -24,7 +24,7 @@ void List::merge(List* l){
     blank = false;
   } else {
     SubList* t = new SubList();
-    int m(0), n(0);
+    Numerous m(0), n(0);
     while( m < size() && n < l->size() ){
       if(at(m) < l->at(n)){
 	m++;
@@ -41,15 +41,15 @@ void List::merge(List* l){
   delete l;
 }
 
-void List::push(int v){
+void List::push(Numerous v){
   values->push_back(v);
 }
 
-int List::at(int i){
+Numerous List::at(Numerous i){
   return values->at(i);
 }
 
-int List::size(){
+Numerous List::size(){
   return values->size();
 }
 

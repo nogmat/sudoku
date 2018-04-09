@@ -13,12 +13,12 @@ Entity::Entity(){
 }
 
 void Entity::initEntity(){
-  for(int i = 0 ; i < 9 ; i++){
+  for(Numerous i = 0 ; i < 9 ; i++){
     values[i] = true;
   }
 }  
 
-bool Entity::addValue(int v){
+bool Entity::addValue(Numerous v){
   if(v>=1 && v<=9){
     if(values[v-1]){
       values[v-1] = false;
@@ -30,7 +30,7 @@ bool Entity::addValue(int v){
 
 List* Entity::getList(){
   List* l = new List();
-  for(int i = 0 ; i < 9 ; i++){
+  for(Numerous i = 0 ; i < 9 ; i++){
     if(values[i]){
       l->push(i+1);
     }
@@ -38,6 +38,6 @@ List* Entity::getList(){
   return l;
 }
 
-void Entity::remValue(int v){
+void Entity::remValue(Numerous v){
   values[v-1] = true;
 }
