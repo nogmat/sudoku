@@ -10,8 +10,8 @@
  */
 #include <vector>
 
-typedef short int Numerous;
-typedef std::vector<short int> SubList;
+typedef unsigned char Numerous;
+typedef std::vector<Numerous> SubList;
 
 /*!
  * \class List

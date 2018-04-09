@@ -54,7 +54,7 @@ void display(Board cells){
   for(Numerous i = 0 ; i < 9 ; i++){
     cout << "\n";
     for(Numerous j = 0 ; j < 9 ; j++){
-      cout << cells[i][j];
+      cout << (char) (cells[i][j]+'0');
     }
   }
   cout << endl;
